@@ -47,3 +47,8 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+app.post('/generate-question', async (req, res) => {
+  // Your code for handling the request
+});
+
