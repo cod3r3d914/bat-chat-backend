@@ -1,11 +1,10 @@
 const express = require('express');
 const axios = require('axios');
-require('dotenv').config(); // Load environment variables from .env file
+require('dotenv').config();
 
 const app = express();
 app.use(express.json());
 
-// POST endpoint for generating questions
 app.post('/generate-question', async (req, res) => {
   const { category } = req.body;
   let prompt = '';
@@ -42,13 +41,7 @@ app.post('/generate-question', async (req, res) => {
   }
 });
 
-// Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-app.post('/generate-question', async (req, res) => {
-  // Your code for handling the request
-});
-
